@@ -39,11 +39,13 @@ PRODUCT_PACKAGES += \
 TARGET_RECOVERY_DEVICE_MODULES += \
 libkeymaster4 \
 libhidlmemory \
+libpuresoftkeymasterdevice \
 android.hidl.memory@1.0 \
 android.hidl.memory.token@1.0 
 RECOVERY_LIBRARY_SOURCE_FILES += \
  $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster4.so \
  $(TARGET_OUT_SHARED_LIBRARIES)/libhidlmemory.so \
+ $(TARGET_OUT_SHARED_LIBRARIES)/libpuresoftkeymasterdevice.so \
  $(TARGET_OUT_SHARED_LIBRARIES)/android.hidl.memory@1.0.so \
  $(TARGET_OUT_SHARED_LIBRARIES)/android.hidl.memory.token@1.0.so 
 
