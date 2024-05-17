@@ -12,6 +12,7 @@ on boot
     start health-hal-2-1
     start vendor.tsupplicant
     start keystore2
+    start tee_rpc
 
 # We need vold early for metadata encryption
 on early-fs
