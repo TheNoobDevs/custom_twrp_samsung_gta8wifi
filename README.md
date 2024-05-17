@@ -1,10 +1,6 @@
-# Android device tree for samsung SM-X200 (gta8wifi)
+# Android device tree for samsung SM-X200 (gta8wifi) By TheNoobDevs.
 
-```
-#
-# Copyright (C) 2024 The Android Open Source Project
-# Copyright (C) 2024 SebaUbuntu's TWRP device tree generator
-#
-# SPDX-License-Identifier: Apache-2.0
-#
-```
+# Clone Tree
+    git clone https://github.com/TheNoobDevs/custom_twrp_samsung_gta8wifi.git -b twrp-12.1 device/samsung/gta8wifi
+# Build Twrp
+    ALLOW_MISSING_DEPENDENCIES=true; . build/envsetup.sh; lunch twrp_gta8wifi-eng; mka recoveryimage
