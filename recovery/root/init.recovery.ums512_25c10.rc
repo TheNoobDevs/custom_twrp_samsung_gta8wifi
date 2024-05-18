@@ -11,8 +11,10 @@ on init
 on boot
     start health-hal-2-1
     start vendor.tsupplicant
+    start vendor.tsupplicant-cali
     start keystore2
     start tee_rpc
+    start trusty
 
 # We need vold early for metadata encryption
 on early-fs
@@ -27,9 +29,6 @@ on fs
     export ANDROID_ROOT /system_root
 
 on late-fs
-   … 
-    # Wait for keymaster
-    exec_start wait_for_keymaster
 
     # Mount RW partitions which need run fsck
     mount_all /vendor/etc/fstab.${ro.boot.hardware.platform} --late
@@ -73,7 +72,7 @@ service keystore2 /system/bin/keystore2 /data/misc/keystore
     disabled
     seclabel u:r:recovery:s0
 
-    service keymaster-4-0 /system/bin/android.hardware.keymaster@4.0-service
+service keymaster-4-0 /system/bin/android.hardware.keymaster@4.0-service
     interface android.hardware.keymaster@4.0::IKeymasterDevice default
     user root
     group root drmrpc
