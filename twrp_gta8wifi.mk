@@ -9,9 +9,6 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit some common Omni stuff.
-$(call inherit-product, vendor/twrp/config/common.mk)
-
 # Release name
 PRODUCT_RELEASE_NAME := gta8wifi
 
