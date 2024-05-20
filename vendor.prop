@@ -1,5 +1,5 @@
 # Platform
-ro.boot.hardware.platform=ums512_25c10
+#ro.boot.hardware.platform=ums512_25c10
 
 # Crypto
 ro.crypto.metadata_init_delete_all_keys.enabled=false
