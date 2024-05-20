@@ -1,0 +1,8 @@
+ro.display.series=Samsung Galaxy Tab A8 10.4
+ro.board.platform=ums512
+ro.product.system.brand=samsung
+ro.product.system.device=gta8wifi
+ro.product.system.manufacturer=samsung
+ro.product.system.model=SM-X200
+ro.boot.bootdevice=7824900.sdhci
+ro.boot.hardware.platform=ums512_25c10
