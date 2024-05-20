@@ -142,6 +142,7 @@ PRODUCT_FULL_TREBLE := true
 
 # Props
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
+TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 
 # Logging
 TARGET_USES_LOGD := true
