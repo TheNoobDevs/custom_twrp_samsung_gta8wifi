@@ -12,18 +12,25 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit some common Omni stuff.
 $(call inherit-product, vendor/twrp/config/common.mk)
 
-# Inherit from gta8wifi device
-$(call inherit-product, device/samsung/gta8wifi/device.mk)
+# Release name
+PRODUCT_RELEASE_NAME := gta8wifi
 
-PRODUCT_DEVICE := gta8wifi
-PRODUCT_NAME := twrp_gta8wifi
-PRODUCT_BRAND := samsung
+# Inherit from our custom product configuration
+$(call inherit-product, vendor/twrp/config/common.mk)
+
+## Device identifier. This must come after all inclusions
+PRODUCT_DEVICE := $(PRODUCT_RELEASE_NAME)
+PRODUCT_NAME := twrp_$(PRODUCT_DEVICE)
 PRODUCT_MODEL := SM-X200
+PRODUCT_BRAND := samsung
 PRODUCT_MANUFACTURER := samsung
 
-PRODUCT_GMS_CLIENTID_BASE := android-samsung-ss
+# Inherit from hardware-specific part of the product configuration
+$(call inherit-product, device/$(PRODUCT_BRAND)/$(PRODUCT_DEVICE)/device.mk)
 
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="gta8wifixx-user 11 RP1A.200720.012 X200XXS3DXD5 release-keys"
+#PRODUCT_GMS_CLIENTID_BASE := android-samsung-ss
 
-BUILD_FINGERPRINT := samsung/gta8wifixx/gta8wifi:11/RP1A.200720.012/X200XXS3DXD5:user/release-keys
+ #PRODUCT_BUILD_PROP_OVERRIDES += \
+    #PRIVATE_BUILD_DESC="gta8wifixx-user 11 RP1A.200720.012 X200XXS3DXD5 release-keys"
+
+#BUILD_FINGERPRINT := samsung/gta8wifixx/gta8wifi:11/RP1A.200720.012/X200XXS3DXD5:user/release-keys
