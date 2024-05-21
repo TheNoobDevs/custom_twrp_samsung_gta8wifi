@@ -71,6 +71,18 @@ TARGET_KERNEL_CONFIG := gta8wifi_eur_open_defconfig
 TARGET_KERNEL_SOURCE := kernel/samsung/gta8wifi
 TARGET_FORCE_PREBUILT_KERNEL := true
 
+ # Root
+BOARD_ROOT_EXTRA_FOLDERS := \
+    carrier \
+    efs \
+    omr \
+    optics \
+    prism \
+    spu \
+    persist \
+    sec_efs \
+    firmware
+
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
 BOARD_BOOTIMAGE_PARTITION_SIZE := 67108864
