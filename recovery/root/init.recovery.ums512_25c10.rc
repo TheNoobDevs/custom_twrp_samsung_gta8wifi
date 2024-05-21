@@ -9,15 +9,14 @@ on init
     mkdir /sec_efs
 
 on boot
-    start keymaster-4-0
     start gatekeeper-1-0
+    start trusty
     start health-hal-2-1
     start vendor.tsupplicant
     start vendor.tsupplicant-cali
-    start keystore2
     start tee_rpc
-    start trusty
-    
+    start keymaster-4-0
+    start keystore2
 
 # We need vold early for metadata encryption
 on early-fs
