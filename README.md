@@ -12,6 +12,6 @@
 ## Sync
     repo sync
 # Clone Tree
-    git clone https://github.com/TheNoobDevs/custom_twrp_samsung_gta8wifi.git -b twrp-12.1 device/samsung/gta8wifi
+    git clone https://github.com/TheNoobDevs/custom_twrp_samsung_gta8wifi.git -b A14 device/samsung/gta8wifi
 # Build Twrp
     ALLOW_MISSING_DEPENDENCIES=true; . build/envsetup.sh; lunch twrp_gta8wifi-eng; mka recoveryimage
