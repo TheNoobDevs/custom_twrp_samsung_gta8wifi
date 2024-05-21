@@ -9,12 +9,15 @@ on init
     mkdir /sec_efs
 
 on boot
+    start keymaster-4-0
+    start gatekeeper-1-0
     start health-hal-2-1
     start vendor.tsupplicant
     start vendor.tsupplicant-cali
     start keystore2
     start tee_rpc
     start trusty
+    
 
 # We need vold early for metadata encryption
 on early-fs
@@ -85,20 +88,3 @@ service gatekeeper-1-0 /system/bin/hw/android.hardware.gatekeeper@1.0-service-tr
     group root
     disabled
     seclabel u:r:recovery:s0
-
-on property:ro.crypto.state=encrypted && property:ro.crypto.type=file
-    install_keyring
-
-on property:hwservicemanager.ready=true
-    start keymaster-4-0
-    start gatekeeper-1-0
-
-on property:vendor.sys.listener.registered=true
-    start keymaster-4-0
-    start gatekeeper-1-0
-   
-on property:twrp.decrypt.done=true && property:twrp.all.users.decrypted=true
-    stop keymaster-4-0
-    stop gatekeeper-1-0
-    stop servicemanager
-    stop hwservicemanager
