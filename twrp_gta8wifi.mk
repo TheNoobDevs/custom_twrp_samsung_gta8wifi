@@ -1,5 +1,3 @@
-#
-# Copyright (C) 2024 The Android Open Source Project
 # Copyright (C) 2024 SebaUbuntu's TWRP device tree generator
 #
 # SPDX-License-Identifier: Apache-2.0
@@ -25,9 +23,9 @@ PRODUCT_MANUFACTURER := samsung
 # Inherit from hardware-specific part of the product configuration
 $(call inherit-product, device/$(PRODUCT_BRAND)/$(PRODUCT_DEVICE)/device.mk)
 
-#PRODUCT_GMS_CLIENTID_BASE := android-samsung-ss
+PRODUCT_GMS_CLIENTID_BASE := android-samsung-ss
 
- #PRODUCT_BUILD_PROP_OVERRIDES += \
-    #PRIVATE_BUILD_DESC="gta8wifixx-user 11 RP1A.200720.012 X200XXS3DXD5 release-keys"
+ PRODUCT_BUILD_PROP_OVERRIDES += \
+    PRIVATE_BUILD_DESC="gta8wifixx-user 11 RP1A.200720.012 X200XXS3DXD5 release-keys"
 
-#BUILD_FINGERPRINT := samsung/gta8wifixx/gta8wifi:11/RP1A.200720.012/X200XXS3DXD5:user/release-keys
+BUILD_FINGERPRINT := samsung/gta8wifixx/gta8wifi:11/RP1A.200720.012/X200XXS3DXD5:user/release-keys

@@ -59,3 +59,8 @@ PRODUCT_PACKAGES_ENG += \
 
 # VNDK
 PRODUCT_TARGET_VNDK_VERSION := 32
+
+# HACK: Set vendor patch level
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.bootimage.build.date.utc=0 \
+    ro.build.date.utc=0
