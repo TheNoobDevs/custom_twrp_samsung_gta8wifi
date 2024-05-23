@@ -18,6 +18,8 @@ on boot
     start tee_rpc
     start keymaster-4-0
     start keystore2
+    start gralloc-4-0
+    start hwcomposer-2-3
 
 # We need vold early for metadata encryption
 on early-fs
@@ -87,6 +89,24 @@ service gatekeeper-1-0 /system/bin/hw/android.hardware.gatekeeper@1.0-service-tr
     user root
     group root
     disabled
+    seclabel u:r:recovery:s0
+
+service gralloc-4-0 /system/bin/android.hardware.graphics.allocator@4.0-service
+    class hal animation
+    interface android.hardware.graphics.allocator@4.0::IAllocator default
+    user root
+    group graphics drmrpc
+    capabilities SYS_NICE
+    onrestart restart surfaceflinger
+    seclabel u:r:recovery:s0
+
+service hwcomposer-2-3 /system/bin/android.hardware.graphics.composer@2.3-service
+    class hal animation
+    user root
+    group graphics drmrpc
+    capabilities SYS_NICE
+    onrestart restart surfaceflinger
+    writepid /dev/cpuset/system-background/tasks
     seclabel u:r:recovery:s0
 
 on property:ro.build.version.security_patch=*
