@@ -175,3 +175,6 @@ DEXPREOPT_GENERATE_APEX_IMAGE := true
 
 # Assert
 TARGET_OTA_ASSERT_DEVICE := gta8wifi
+
+# Making the recovery.img smaller
+BOARD_HAS_NO_REAL_SDCARD := true
